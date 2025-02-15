@@ -1,12 +1,5 @@
 //1. Swap Two Variables Without Using a Third Variable
-//Question: Swap two numbers a and b without using a third variable.
-//let a = 5, b = 10;
-// Your code here
-//console.log(a, b); // Output: 10, 5
-//Concepts: Variables, operators.
- 
-
-let a = 5, b = 10;
+ let a = 5, b = 10;
 
 a = a + b;
 b = a - b;
@@ -14,17 +7,7 @@ a = a - b;
 
 console.log(a, b); 
 
-
 //2. Find the Largest of Three Numbers
-//Question: Write a function to find the largest of three numbers using conditional statements.
-//javascript
-//CopyEdit
-//function findLargest(a, b, c) {
-// Your code here
-//}
-//console.log(findLargest(3, 7, 5)); // Output: 7
-//Concepts: Conditional statements (if-else).
- 
 let num1 = 3;
 let num2 = 7;
 let num3 = 5;
@@ -37,16 +20,7 @@ if (num1 >= num2 && num1 >= mum3) {
   console.log(`largest no is ${num3}`);
 }
 
-
 //3. Check If a Number is Prime
-//Question: Write a function to check whether a given number is prime.
-//javascript
-//CopyEdit
-//function isPrime(num) {
-// Your code here
-//}
-//console.log(isPrime(7)); // Output: true
-//console.log(isPrime(10)); // Output: false
 function isPrime(num) {
   if (num < 2) return false;
   for (let i = 2; i <= Math.sqrt(num); i++) {
@@ -58,17 +32,7 @@ function isPrime(num) {
 console.log(isPrime(7));  
 console.log(isPrime(10)); 
 
-
- 
 //4. Reverse an Array Without Using Built-in Methods
-//: Reverse an array using a loop instead of built-in methods.
-//javascript
-//CopyEdit
-//function reverseArray(arr) {
-// Your code here
-//}
-//console.log(reverseArray([1, 2, 3, 4])); // Output: [4, 3, 2, 1]
-//Concepts: Loops, arrays.
 
 function reverseArray(arr) {
   let reversed = [];
@@ -81,30 +45,62 @@ function reverseArray(arr) {
 console.log(reverseArray([1, 2, 3, 4])); 
 
 //5. Sum of Even Numbers in an Array
-//Question: Write a function to find the sum of all even numbers in an array.
-//javascript
-//CopyEdit
-//function sumEvenNumbers(arr) {
-// Your code here
-//}
-//console.log(sumEvenNumbers([1, 2, 3, 4, 5, 6])); // Output: 12
-//Concepts: Arrays, loops, operators.
-
 function sumEvenNumbers(arr) {
   return arr.reduce((sum, num) => num % 2 === 0 ? sum + num : sum, 0);
 }
 
-console.log(sumEvenNumbers([1, 2, 3, 4, 5, 6]));
+console.log(sumEvenNumbers([1, 2, 3, 4, 5, 6])); 
+
+//6. Count the Number of Vowels in a String
+function countVowels(str) {
+  let count = 0;
+  let vowels = "aeiouAEIOU"; 
+
+  for (let char of str) {
+      if (vowels.includes(char)) {
+          count++;
+      }
+  }
+  
+  return count;
+}
+
+console.log(countVowels("hello world")); 
+console.log(countVowels("JavaScript")); 
+console.log(countVowels("AEIOU")); 
+
+//7. Find the Second Largest Number in an Array
+function secondLargest(arr) {
+  if (arr.length < 2) {
+      return "Array must have at least two elements";
+  }
+
+  let first = -Infinity, second = -Infinity;
+
+  for (let num of arr) {
+      if (num > first) {
+          second = first;
+          first = num;
+      } else if (num > second && num !== first) {
+          second = num;
+      }
+  }
+
+  return second === -Infinity ? "No second largest number" : second;
+}
+
+console.log(secondLargest([10, 20, 4, 45, 99])); 
+console.log(secondLargest([5, 5, 5])); 
+console.log(secondLargest([100])); 
+
+//8. Remove Duplicates from an Array
+function removeDuplicates(arr) {
+  return [...new Set(arr)];
+}
+console.log(removeDuplicates([1, 2, 2, 3, 4, 4, 5])); 
+console.log(removeDuplicates([10, 20, 20, 30, 40, 50, -(removeDuplicates([1, 1, 1, 1, 1]))
 
 //9. Find Factorial of a Number (Using Loop)
-//Question: Write a function to find the factorial of a given number using a loop.
-//javascript
-//CopyEdit
-//function factorial(n) {
-// Your code here
-//}
-//console.log(factorial(5)); // Output: 120
-//Concepts: Loops, operators.
 
 function factorial(n) {
   if (n < 0) return "Invalid input"; 
@@ -115,5 +111,21 @@ function factorial(n) {
   return result;
 }
 
-console.log(factorial(5)); 
+console.log(factorial(5));
 
+//10. Check if an Array is Sorted (Ascending Order)
+function isSorted(arr) {
+  for (let i = 0; i < arr.length - 1; i++) {
+      if (arr[i] > arr[i + 1]) {
+          return false;
+      }
+  }
+  return true;
+}
+
+console.log(isSorted([1, 2, 3, 4, 5])); 
+console.log(isSorted([1, 3, 2, 4, 5])); 
+console.log(isSorted([10, 20, 30, 40]));
+console.log(isSorted([5, 4, 3, 2, 1])); 
+console.log(isSorted([1])); 
+console.log(isSorted([])); 
