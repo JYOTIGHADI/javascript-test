@@ -66,35 +66,37 @@ console.log(secondSmallest([10, 20, 30, 5, 7]));
 // "tpircSavaJ si nuf"
 // Concepts: Loops, strings, arrays.
 
-function reverseWords (str) {
-    let reversed = "";  
+function reverseWords(sentence) {
+    let result = "";
+    let word = "";
 
-    for (let i = str.length - 1; i >= 0; i--) {  
-        reversed += str[i];  
+    for (let i = 0; i <= sentence.length; i++) {
+        if (i === sentence.length || sentence[i] === ' ') {
+            
+            let reversedWord = "";
+            for (let j = word.length - 1; j >= 0; j--) {
+                reversedWord += word[j];
+            }
+
+            result += reversedWord;
+
+            
+            if (i !== sentence.length) {
+                result += " ";
+            }
+
+            // Reset word for the next one
+            word = "";
+        } else {
+            word += sentence[i];
+        }
     }
 
-    return reversed;  
+    return result;
+}
 
-     }
-      console.log(reverseWords("hello world")); 
-     console.log(reverseWords("JavaScript is fun")) ;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log(reverseWords("hello world")); 
+console.log(reverseWords("JavaScript is fun")); 
 
 // 4. Find the Missing Number in an Array
 // Question: You have an array of numbers from 1 to n with one missing number. Find the missing
@@ -106,21 +108,14 @@ function reverseWords (str) {
 // console.log(findMissingNumber([1, 3, 4, 5, 6], 6)); // Output: 2
 // Concepts: Arithmetic operations, loops.
 
-// function findMissingNumber(arr, n) {
-//     let 
-//     for()
-    
-//      }
-//     console.log(findMissingNumber([1, 2, 4, 5], 5)); 
-//      console.log(findMissingNumber([1, 3, 4, 5, 6], 6)); 
-    
+    function findMissingNumber(arr, n) {
+    let expectedSum = (n * (n + 1)) / 2;
+    let actualSum = arr.reduce((sum, num) => sum + num, 0);
+    return expectedSum - actualSum;
+}
 
-
-
-
-
-
-
+console.log(findMissingNumber([1, 2, 4, 5], 5)); 
+console.log(findMissingNumber([1, 3, 4, 5, 6], 6)); 
 
 
 
@@ -134,6 +129,26 @@ function reverseWords (str) {
 // console.log(compressString("abc")); // Output: "a1b1c1"
 // console.log(compressString("aabbccddeee")); // Output: "a2b2c2d2e3"
 // Concepts: Loops, string manipulation.
+
+function compressString(str) {
+    let compressed = "";
+    let count = 1;
+
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] === str[i + 1]) {
+            count++;
+        } else {
+            compressed += str[i] + count;
+            count = 1;
+        }
+    }
+
+    return compressed;
+}
+
+console.log(compressString("aaabbcddd")); 
+console.log(compressString("abc")); 
+console.log(compressString("aabbccddeee")); 
 
 
 
