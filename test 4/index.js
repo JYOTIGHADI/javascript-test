@@ -1,11 +1,4 @@
 //1.find the Third Largest number in an arrey.
-// function thirdLargest(arr) {
-
-// }
-// console.log(thirdLargest([4,1,6,2,8,10]));//output 6
-// console.log(thirdLargest([10,20,30,5,7]));//output 10
-//concepts loops,conditional satetment
-
 
 function thirdLargest(arr) {
     if (arr.length < 3) {
@@ -36,15 +29,7 @@ console.log(thirdLargest([4, 1, 6, 2, 8, 10]));
 console.log(thirdLargest([10,20,30,5,7]));
 
 
-
 // //2. Reverse a number
-// function reverseNumbers (num){
-
-// }
-// console.log(reverseNumbers(1234));  //output:4321
-// console.log(reverseNumbers(-567));  //output:-765
-// //concepts loops, arithmetical operations
-
 
 function reverseNumber(num) {
     const isNegative = num < 0;
