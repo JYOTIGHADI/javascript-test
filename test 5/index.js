@@ -1,16 +1,3 @@
-// 2. Move All Zeros to the End of an Array
-
-function moveZerosToEnd(arr) {
-    let nonZeroElements = arr.filter(num => num !== 0);
-    let zeroCount = arr.length - nonZeroElements.length;
-    return [...nonZeroElements, ...Array(zeroCount).fill(0)];
-}
-console.log(moveZerosToEnd([0, 1, 0, 3, 12])); 
-console.log(moveZerosToEnd([0, 0, 1, 0, 5])); 
-console.log(moveZerosToEnd([4, 2, 0, 0, 1])); 
-
-
-
 //1. Convert a Roman Numeral to an Integer
 function romanToInt(s) {
     const romanMap = {
@@ -34,11 +21,23 @@ function romanToInt(s) {
     return total;
 }
 //Example Test Cases
-console.log(romanToInt("XII")); // Output: 12
-console.log(romanToInt("IX")); // Output: 9
-console.log(romanToInt("MCMXCIV")); // Output: 1994
+console.log(romanToInt("XII")); 
+console.log(romanToInt("IX")); 
+console.log(romanToInt("MCMXCIV")); 
+
+// 2. Move All Zeros to the End of an Array
+
+function moveZerosToEnd(arr) {
+    let nonZeroElements = arr.filter(num => num !== 0);
+    let zeroCount = arr.length - nonZeroElements.length;
+    return [...nonZeroElements, ...Array(zeroCount).fill(0)];
+}
+console.log(moveZerosToEnd([0, 1, 0, 3, 12])); 
+console.log(moveZerosToEnd([0, 0, 1, 0, 5])); 
+console.log(moveZerosToEnd([4, 2, 0, 0, 1])); 
 
 // 3. Generate All Substrings of a Given String
+
 function generateSubstrings(str) {
     let result = [];
 
