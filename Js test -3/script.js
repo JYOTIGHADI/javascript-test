@@ -74,8 +74,7 @@ let combined = arr1.concat(arr2);
 
 let unique = [...new Set(combined)];
 
-console.log(unique); 
-
+console.log(unique);  
 
 
 
@@ -256,4 +255,3 @@ for (let i = 0; i < Array.length; i++) {
 }
 
 console.log(freq);
-
