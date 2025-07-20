@@ -152,4 +152,34 @@ for (let i = 1; i <= b; i++) {
 //     ***
 //      * 
 
+const printDiamond = () => {
+    let range = 4;
 
+    for (let i = 1; i <= range; i++) {
+        let res = "";
+
+        for (let s = 1; s <= range - i; s++) {
+            res += " ";
+        }
+        for (let j = 1; j <= 2 * i - 1; j++) {
+            res += "*";
+        }
+
+        console.log(res);
+    }
+
+    for (let i = range - 1; i >= 1; i--) {
+        let res = "";
+        for (let s = 1; s <= range - i; s++) {
+            res += " ";
+        }
+
+        for (let j = 1; j <= 2 * i - 1; j++) {
+            res += "*";
+        }
+
+        console.log(res);
+    }
+};
+
+printDiamond();
